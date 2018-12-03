@@ -1,0 +1,17 @@
+{
+  "name": "DS_ALgorithms",
+  "version": "1.0.0",
+  "description": "implementation of various algorithms and Data structures",
+  "main": "index.js",
+  "repository": "https://github.com/e-liyai/Data_Structures_and_Algorithms.git",
+  "author": "Andela-eugene <eugene.liyai@andela.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
