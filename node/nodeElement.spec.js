@@ -1,4 +1,4 @@
-import NodeElement from 'nodeElement'
+import NodeElement from './nodeElement'
 
 let node1
 let node2
@@ -9,6 +9,12 @@ describe('test data structure node', () => {
   })
 
   test('successfuly create node object', () => {
-    expect(node1.value).toBe(2)
+    expect(node1._value).toBe(2)
+    expect(node2._value).toBe(3)
+    expect(node2._next).toBe(null)
+  })
+  test('successfuly reset value of node object', () => {
+    node1.nodeValue = 40
+    expect(node1._value).toBe(40)
   })
 })

@@ -1,14 +1,14 @@
 export default class {
   constructor(value, next=null) {
-    this.value = value
-    this.next = next
+    this._value = value
+    this._next = next
   }
 
   set nodeValue(value) {
-    this.value = value
+    this._value = value
   }
 
   set nodeNext(next) {
-    this.next = next
+    this._next = next
   }
 }
