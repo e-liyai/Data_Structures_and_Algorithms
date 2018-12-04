@@ -17,4 +17,8 @@ describe('test data structure node', () => {
     node1.nodeValue = 40
     expect(node1._value).toBe(40)
   })
+  test('successfuly add node pointer', () => {
+    node1.nodeNext = node2
+    expect(node1._next).toBe(node2)
+  })
 })
