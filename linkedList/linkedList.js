@@ -28,4 +28,21 @@ export default class {
     this.tail.nodeNext = newNode
     this.count++
   }
+
+  removeLast() {
+    if (this.count !== 0) {
+      if (this.count === 1) {
+        this.tail.nodeNext = null
+        this.head.nodeNext = null
+      } else {
+        let current = this.head
+        while (current._next._next !== this.tail) {
+          current = current._next
+        }
+        current._next = null
+        this.tail._next = current
+      }
+      count--
+    }
+  }
 }
