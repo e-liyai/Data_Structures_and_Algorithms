@@ -1,4 +1,4 @@
-import LinkedList from './linkedList'
+import LinkedList from './singlylinkedList'
 
 let linkedList
 describe('test linked list data structure', () => {
