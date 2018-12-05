@@ -1,0 +1,31 @@
+import nodeElement from '../node/nodeElement'
+
+export default class {
+  constructor() {
+    this.tail = new nodeElement(null)
+    this.head = new nodeElement(null)
+    this.count = 0
+  }
+
+  addFront(nodeValue) {
+    let newNode = new nodeElement(nodeValue)
+
+    newNode.nodeNext = this.head._next
+    this.head.nodeNext = newNode
+    this.count++
+    if (this.count === 1) {
+      this.tail.nodeNext = newNode
+    }
+  }
+
+  addLast(nodeValue) {
+    let newNode = new nodeElement(nodeValue)
+    if (this.count === 0) {
+      this.head.nodeNext = newNode
+    } else {
+       newNode.nodeNext = this.tail._next
+    }
+    this.tail.nodeNext = newNode
+    this.count++
+  }
+}
