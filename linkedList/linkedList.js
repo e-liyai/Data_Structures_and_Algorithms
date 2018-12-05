@@ -42,7 +42,22 @@ export default class {
         current._next = null
         this.tail._next = current
       }
-      count--
+      this.count--
+    }
+  }
+
+  removeFirst() {
+    if (this.count !== 0) {
+      if (this.count === 1) {
+        this.tail.nodeNext = null
+        this.head.nodeNext = null
+      } else {
+        this.head._next = this.head._next._next
+      }
+      this.count--
+      if (this.count === 0) {
+        this.tail.nodeNext = null
+      }
     }
   }
 }
