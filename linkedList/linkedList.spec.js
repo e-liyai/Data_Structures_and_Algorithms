@@ -53,4 +53,18 @@ describe('test linked list data structure', () => {
     linkedList.addFront(88)
     expect(linkedList.count).toEqual(6)
   })
+
+  test('remove first items in an existing list', () => {
+    linkedList.addFront(12)
+    linkedList.addFront(28)
+    linkedList.addLast(8)
+    linkedList.addLast(63)
+    linkedList.addLast(57)
+    linkedList.addFront(88)
+    let node = linkedList.head._next
+    expect(node._value).toBe(88)
+    linkedList.removeFirst()
+    node = linkedList.head._next
+    expect(node._value).toBe(28)
+  })
 })
