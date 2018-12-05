@@ -67,4 +67,16 @@ describe('test linked list data structure', () => {
     node = linkedList.head._next
     expect(node._value).toBe(28)
   })
+
+  test('remove first item in list with one item', () => {
+    linkedList.addFront(44)
+    linkedList.removeFirst()
+    expect(linkedList.head._next).toBe(null)
+  })
+
+  test('remove last item in list with one item', () => {
+    linkedList.addFront(44)
+    linkedList.removeLast()
+    expect(linkedList.head._next).toBe(null)
+  })
 })
