@@ -20,11 +20,10 @@ export default class {
     }
   }
 
-  addMiddle(currentNode, nodeValue) {
+  addBefore(currentNode, nodeValue) {
     let newNode = new nodeElement(nodeValue)
-    let loopCounter = this.count
     let node = this.head._next
-    while(loopCounter) {
+    while(node._next) {
       node = node._next
       if (node === currentNode){
         let prevNode = node._previous
@@ -35,7 +34,6 @@ export default class {
         this.count++
         return
       }
-      loopCounter--
     }
   }
 
