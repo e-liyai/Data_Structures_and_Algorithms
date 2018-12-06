@@ -20,6 +20,25 @@ export default class {
     }
   }
 
+  addMiddle(currentNode, nodeValue) {
+    let newNode = new nodeElement(nodeValue)
+    let loopCounter = this.count
+    let node = this.head._next
+    while(loopCounter) {
+      node = node._next
+      if (node === currentNode){
+        let prevNode = node._previous
+        newNode.nodeNext = node
+        prevNode.nodeNext = newNode
+        newNode.nodePrevious = prevNode
+        node.nodePrevious = newNode
+        this.count++
+        return
+      }
+      loopCounter--
+    }
+  }
+
   addLast(nodeValue) {
     let newNode = new nodeElement(nodeValue)
     if (this.count === 0) {

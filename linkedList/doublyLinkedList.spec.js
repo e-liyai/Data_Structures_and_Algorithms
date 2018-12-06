@@ -94,4 +94,8 @@ describe('test doubly linked list data structure', () => {
     expect(secondToLast._next).toBe(null)
     expect(doublylinkedList.tail._next).toBe(secondToLast)
   })
+
+  test('add item in the middle of existing list', () => {
+
+  })
 })
