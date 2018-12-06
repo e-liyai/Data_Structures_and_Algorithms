@@ -29,4 +29,14 @@ describe('test doubly linked list data structure', () => {
     expect(lastNode._previous).toBe(node)
     expect(lastNode._next).toBe(null)
   })
+
+  test('test add item to the back of an empty list', () => {
+    doublylinkedList.addLast(12)
+    let node = doublylinkedList.head._next
+    let lastNode = doublylinkedList.tail._next
+    expect(node._value).toEqual(lastNode._value)
+    expect(node._next).toEqual(null)
+    expect(node._previous).toEqual(doublylinkedList.head)
+  })
+
 })
