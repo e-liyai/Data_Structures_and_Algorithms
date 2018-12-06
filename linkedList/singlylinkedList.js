@@ -55,9 +55,6 @@ export default class {
         this.head._next = this.head._next._next
       }
       this.count--
-      if (this.count === 0) {
-        this.tail.nodeNext = null
-      }
     }
   }
 }

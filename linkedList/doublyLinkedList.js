@@ -38,12 +38,9 @@ export default class {
         this.tail.nodeNext = null
         this.head.nodeNext = null
       } else {
-        let current = this.head
-        while (current._next._next !== this.tail) {
-          current = current._next
-        }
-        current._next = null
-        this.tail._next = current
+        let last = this.tail._next
+        last._previous.nodeNext = null
+        this.tail.nodeNext = last._previous
       }
       this.count--
     }
@@ -55,12 +52,11 @@ export default class {
         this.tail.nodeNext = null
         this.head.nodeNext = null
       } else {
-        this.head._next = this.head._next._next
+        let secondNode = this.head._next._next
+        secondNode.nodePrevious = this.head
+        this.head.nodeNext = secondNode
       }
       this.count--
-      if (this.count === 0) {
-        this.tail.nodeNext = null
-      }
     }
   }
 }
