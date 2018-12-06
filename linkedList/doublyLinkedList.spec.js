@@ -68,4 +68,30 @@ describe('test doubly linked list data structure', () => {
     expect(node._value).toBe(28)
     expect(node._previous).toBe(doublylinkedList.head)
   })
+
+  test('remove first item in list with one item', () => {
+    doublylinkedList.addFront(44)
+    doublylinkedList.removeFirst()
+    expect(doublylinkedList.head._next).toBe(null)
+    expect(doublylinkedList.tail._next).toBe(null)
+  })
+
+  test('remove last item in an existing list', () => {
+    doublylinkedList.addFront(44)
+    doublylinkedList.addFront(12)
+    doublylinkedList.addFront(28)
+    doublylinkedList.addLast(8)
+    doublylinkedList.addLast(63)
+    doublylinkedList.addLast(57)
+    doublylinkedList.addFront(88)
+    let last = doublylinkedList.tail._next
+    let secondToLast = doublylinkedList.tail._next._previous
+    expect(last._next).toBe(null)
+    expect(last._previous).toBe(secondToLast)
+    expect(last._value).toBe(57)
+    expect(secondToLast._next).toBe(last)
+    doublylinkedList.removeLast()
+    expect(secondToLast._next).toBe(null)
+    expect(doublylinkedList.tail._next).toBe(secondToLast)
+  })
 })
