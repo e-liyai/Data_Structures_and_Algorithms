@@ -25,7 +25,8 @@ export default class {
       this.head.nodeNext = newNode
       newNode.nodePrevious = this.head
     } else {
-       newNode.nodeNext = this.tail._next
+       this.tail._next.nodeNext = newNode
+       newNode.nodePrevious = this.tail._next
     }
     this.tail.nodeNext = newNode
     this.count++
