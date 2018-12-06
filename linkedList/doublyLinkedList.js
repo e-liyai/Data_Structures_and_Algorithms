@@ -23,8 +23,7 @@ export default class {
   addBefore(currentNode, nodeValue) {
     let newNode = new nodeElement(nodeValue)
     let node = this.head._next
-    while(node._next) {
-      node = node._next
+    while(node) {
       if (node === currentNode){
         let prevNode = node._previous
         newNode.nodeNext = node
@@ -34,6 +33,7 @@ export default class {
         this.count++
         return
       }
+      node = node._next
     }
   }
 

@@ -1,9 +1,9 @@
-import Queue from './queueUsingLinkedList'
+import priorityQueue from './priorityQueueUsingLinkedList'
 
 let queue
 describe('test stack list data structure', () => {
   beforeEach(() => {
-    queue = new Queue()
+    queue = new priorityQueue()
   })
 
   test('test if queue is empty', () => {
@@ -20,10 +20,10 @@ describe('test stack list data structure', () => {
     queue.enqueue(53)
     queue.enqueue(67)
     queue.enqueue(11)
-    expect(queue.peek()).toBe(32)
-    expect(queue.dequeue()).toBe(32)
-    expect(queue.dequeue()).toBe(53)
+    expect(queue.peek()).toBe(67)
     expect(queue.dequeue()).toBe(67)
+    expect(queue.dequeue()).toBe(53)
+    expect(queue.dequeue()).toBe(32)
     expect(queue.dequeue()).toBe(11)
     expect(queue.count()).toBe(0)
   })

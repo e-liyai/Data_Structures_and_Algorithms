@@ -29,7 +29,7 @@ export default class {
   }
 
   peek() {
-    if(this._list.count === 0) throw new Error('Stack is empty')
+    if(this._list.count === 0) throw new Error('The queue is empty')
     let item = this._list.head._next
     return item._value
   }
