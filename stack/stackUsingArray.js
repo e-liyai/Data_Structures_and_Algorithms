@@ -9,16 +9,12 @@ export default class {
   }
 
   pop() {
-    if(this._items.length === 0) {
-      throw new Error('Stack is empty')
-    }
+    if(this._items.length === 0) throw new Error('Stack is empty')
     return this._items.shift();
   }
 
   peek() {
-    if(this._items.length === 0) {
-      throw new Error('Stack is empty')
-    }
+    if(this._items.length === 0) throw new Error('Stack is empty')
     return this._items[0];
   }
 

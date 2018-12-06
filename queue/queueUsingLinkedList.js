@@ -5,21 +5,21 @@ export default class {
     this._list = new singlyLinkedList()
   }
 
-  push(item) {
-    this._list.addFront(item)
+  enqueue(item) {
+    this._list.addLast(item)
   }
 
-  pop() {
+  dequeue() {
     if(this._list.count === 0) throw new Error('Stack is empty')
-    const nodeItem = this._list.head._next
+    let item = this._list.head._next
     this._list.removeFirst()
-    return nodeItem._value
+    return item._value
   }
 
   peek() {
     if(this._list.count === 0) throw new Error('Stack is empty')
-    const nodeItem = this._list.head._next
-    return nodeItem._value
+    let item = this._list.head._next
+    return item._value
   }
 
   count() {
