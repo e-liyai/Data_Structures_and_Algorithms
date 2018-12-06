@@ -23,7 +23,7 @@ export default class {
     if (this.count === 0) {
       this.head.nodeNext = newNode
     } else {
-       newNode.nodeNext = this.tail._next
+       this.tail._next.nodeNext = newNode
     }
     this.tail.nodeNext = newNode
     this.count++

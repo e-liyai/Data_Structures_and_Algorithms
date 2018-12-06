@@ -37,10 +37,11 @@ describe('test linked list data structure', () => {
   test('test add item to the back of an existing list', () => {
     linkedList.addFront(12)
     linkedList.addFront(28)
+    let secondToLastNode = linkedList.tail._next
     linkedList.addLast(8)
     let lastNode = linkedList.tail._next
     expect(lastNode._value).toEqual(8)
-    let secondToLastNode = lastNode._next
+    expect(lastNode._next).toEqual(null)
     expect(secondToLastNode._value).toEqual(12)
   })
 
