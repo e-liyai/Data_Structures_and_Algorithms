@@ -24,7 +24,9 @@ describe('test stack list data structure', () => {
     expect(queue.dequeue()).toBe(67)
     expect(queue.dequeue()).toBe(53)
     expect(queue.dequeue()).toBe(32)
+    queue.enqueue(2)
     expect(queue.dequeue()).toBe(11)
+    expect(queue.dequeue()).toBe(2)
     expect(queue.count()).toBe(0)
   })
 
