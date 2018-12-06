@@ -19,5 +19,14 @@ describe('test doubly linked list data structure', () => {
     expect(doublylinkedList.tail._next).toBe(node)
   })
 
-
+  test('test add item to front of existing list', () => {
+    doublylinkedList.addFront(66)
+    doublylinkedList.addFront(75)
+    let node = doublylinkedList.head._next
+    expect(node._value).toBe(75)
+    let lastNode = doublylinkedList.tail._next
+    expect(lastNode._value).toBe(66)
+    expect(lastNode._previous).toBe(node)
+    expect(lastNode._next).toBe(null)
+  })
 })

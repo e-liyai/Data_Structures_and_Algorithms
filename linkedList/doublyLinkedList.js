@@ -11,6 +11,7 @@ export default class {
     let newNode = new nodeElement(nodeValue)
 
     newNode.nodeNext = this.head._next
+    if (this.head._next !== null) this.head._next.nodePrevious = newNode
     newNode.nodePrevious = this.head
     this.head.nodeNext = newNode
     this.count++
