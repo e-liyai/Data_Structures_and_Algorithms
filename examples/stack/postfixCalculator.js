@@ -9,7 +9,7 @@ const readArguments = readline.createInterface({
 let stack = new Stack()
 
 const postFixCalculator = () => {
-  // example input 567*+1-
+  // example input 84/ or 567*+1-
   readArguments.question('Add value and operator: ', (values) => {
 
     console.log('\nCalculating...\n')
