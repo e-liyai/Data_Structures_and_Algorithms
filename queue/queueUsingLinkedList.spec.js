@@ -27,4 +27,9 @@ describe('test stack list data structure', () => {
     expect(queue.dequeue()).toBe(11)
     expect(queue.count()).toBe(0)
   })
+
+  test('test enqueue and dequeue error handling in stack', () => {
+    expect(() => queue.dequeue()).toThrowError('Stack is empty')
+    expect(() => queue.peek()).toThrowError('Stack is empty')
+  })
 })
