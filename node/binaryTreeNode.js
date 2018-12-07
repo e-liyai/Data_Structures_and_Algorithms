@@ -18,6 +18,6 @@ export default class {
   }
 
   greaterThan(value) {
-    return this._value >= value
+    return this._value > value
   }
 }
