@@ -17,7 +17,9 @@ export default class {
     this._right = right
   }
 
-  greaterThan(value) {
-    return this._value > value
+  compareWith(value) {
+    if (this._value === value) return 0
+    else if (this._value > value) return 1
+    else return -1
   }
 }

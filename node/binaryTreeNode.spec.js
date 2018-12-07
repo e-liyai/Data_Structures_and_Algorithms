@@ -22,7 +22,8 @@ describe('test data structure node', () => {
   })
 
   test('test value comparison', () => {
-    expect(node1.greaterThan(2)).toBeTruthy()
-    expect(node1.greaterThan(6)).toBeFalsy()
+    expect(node1.compareWith(2)).toEqual(1)
+    expect(node1.compareWith(6)).toEqual(-1)
+    expect(node1.compareWith(4)).toEqual(0)
   })
 })
