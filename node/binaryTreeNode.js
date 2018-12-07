@@ -16,4 +16,8 @@ export default class {
   set nodeRight(right) {
     this._right = right
   }
+
+  greaterThan(value) {
+    return this._value >= value
+  }
 }

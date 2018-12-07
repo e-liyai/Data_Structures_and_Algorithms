@@ -13,10 +13,16 @@ describe('test data structure node', () => {
   test('successfuly create node object', () => {
     expect(node1._value).toBe(4)
   })
+
   test('successfuly add next and previous pointers', () => {
     node1.nodeLeft = node3
     node1.nodeRight = node2
     expect(node1._left._value).toBe(2)
     expect(node1._right._value).toBe(6)
+  })
+
+  test('test value comparison', () => {
+    expect(node1.greaterThan(2)).toBeTruthy()
+    expect(node1.greaterThan(6)).toBeFalsy()
   })
 })
