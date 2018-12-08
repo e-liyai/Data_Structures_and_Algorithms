@@ -2,7 +2,7 @@ import HashNode from '../node/hashTableNodePair'
 import DoublyLinkedList from '../linkedList/doublyLinkedList'
 
 export default class {
-  constructor(arrayLength) {
+  constructor() {
     this._list = new DoublyLinkedList(null)
   }
 
