@@ -1,9 +1,9 @@
 import HashNode from '../node/hashTableNodePair'
-import LinkedList from '../linkedList/singlylinkedList'
+import DoublyLinkedList from '../linkedList/doublyLinkedList'
 
 export default class {
   constructor(arrayLength) {
-    this._list = new LinkedList(null)
+    this._list = new DoublyLinkedList(null)
   }
 
   add(key, value) {
@@ -47,23 +47,23 @@ export default class {
         node = node._next
       }
     }
-    if(value === null) throw new Error('The collection does not contain the key')
     return value
   }
 
   remove(key) {
-    let value = false
+    let removed = false
     if(this._list.head._next !== null){
       let node = this._list.head._next
       while(node !== null){
         if(node._value._key === key){
-          value = node._value._value
+          this._list.remove(node)
+          removed = true
           break
         }
         node = node._next
       }
     }
-    if(value === null) throw new Error('The collection does not contain the key')
-    return value
+    if(!removed) throw new Error('The collection does not contain the key')
+    return removed
   }
 }
