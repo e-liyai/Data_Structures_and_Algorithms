@@ -8,8 +8,10 @@ export default class {
 
   add(key, value) {
     const hashNode = new HashNode(key, value)
-    if(this._list.head._next === null) this._list.addFront(hashNode)
-    else {
+    if(this._list.head._next === null) {
+      this._list.addFront(hashNode)
+      return
+    } else {
       let node = this._list.head._next
       while(node !== null){
         if(node._value._key === key) throw new Error('The collection already contains the key')
