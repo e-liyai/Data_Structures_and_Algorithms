@@ -124,6 +124,8 @@ describe('test doubly linked list data structure', () => {
     doublylinkedList.remove(current)
     current = doublylinkedList.head._next._next._next
     expect(current._value).toBe(44)
+    expect(current._previous._value).toBe(28)
+    expect(current._next._value).toBe(8)
 
   })
 })
