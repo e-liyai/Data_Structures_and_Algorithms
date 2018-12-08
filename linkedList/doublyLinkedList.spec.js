@@ -109,4 +109,21 @@ describe('test doubly linked list data structure', () => {
     let newNode = doublylinkedList.head._next._next._next
     expect(newNode._value).toBe(22)
   })
+
+  test('remove item from any point', () => {
+    doublylinkedList.addFront(44)
+    doublylinkedList.addFront(12)
+    doublylinkedList.addFront(28)
+    doublylinkedList.addLast(8)
+    doublylinkedList.addLast(63)
+    doublylinkedList.addLast(57)
+    doublylinkedList.addFront(88)
+    expect(doublylinkedList.count).toBe(7)
+    let current = doublylinkedList.head._next._next._next
+    expect(current._value).toBe(12)
+    doublylinkedList.remove(current)
+    current = doublylinkedList.head._next._next._next
+    expect(current._value).toBe(44)
+
+  })
 })

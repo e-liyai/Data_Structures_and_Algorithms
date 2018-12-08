@@ -37,6 +37,27 @@ export default class {
     }
   }
 
+  remove(currentNode) {
+    let node = this.head._next
+    while(node) {
+      if (node === currentNode){
+        if (this.count === 1) {
+          this.tail.nodeNext = null
+          this.head.nodeNext = null
+        } else {
+          let prevNode = node._previous
+          let nextNode = node._next
+          prevNode.nodeNext = nextNode
+          if(node === this.tail._next)this.tail._next.nodeNext = prevNode
+          else nextNode.nodePrevious = prevNode
+        }
+        this.count--
+        return
+      }
+      node = node._next
+    }
+  }
+
   addLast(nodeValue) {
     let newNode = new nodeElement(nodeValue)
     if (this.count === 0) {

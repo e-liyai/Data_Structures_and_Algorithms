@@ -50,4 +50,20 @@ export default class {
     if(value === null) throw new Error('The collection does not contain the key')
     return value
   }
+
+  remove(key) {
+    let value = false
+    if(this._list.head._next !== null){
+      let node = this._list.head._next
+      while(node !== null){
+        if(node._value._key === key){
+          value = node._value._value
+          break
+        }
+        node = node._next
+      }
+    }
+    if(value === null) throw new Error('The collection does not contain the key')
+    return value
+  }
 }
