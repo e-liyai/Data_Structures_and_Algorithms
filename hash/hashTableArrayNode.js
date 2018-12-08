@@ -29,10 +29,25 @@ export default class {
           updated = true
           break
         }
+        node = node._next
       }
     }
-    if(!updated) {
-      throw new Error('The collection does not contain the key')
+    if(!updated) throw new Error('The collection does not contain the key')
+  }
+
+  tryGetValue(key) {
+    let value = null
+    if(this._list.head._next !== null){
+      let node = this._list.head._next
+      while(node !== null){
+        if(node._value._key === key){
+          value = node._value._value
+          break
+        }
+        node = node._next
+      }
     }
+    if(value === null) throw new Error('The collection does not contain the key')
+    return value
   }
 }
