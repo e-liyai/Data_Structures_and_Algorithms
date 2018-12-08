@@ -20,4 +20,10 @@ describe('test HashTableArrayNode data structure', () => {
     expect(hashTableNode.remove(1)).toBeTruthy()
     expect(hashTableNode.tryGetValue(1)).toBe(null)
   })
+
+  test('test HashTableArrayNode error handling', () => {
+    expect(() => hashTableNode.add(1, 'five')).toThrowError('The collection already contains the key')
+    expect(() => hashTableNode.update(4, 'four')).toThrowError('The collection does not contain the key')
+    expect(() => hashTableNode.remove(4)).toThrowError('The collection does not contain the key')
+  })
 })
