@@ -48,7 +48,7 @@ export default class {
           let prevNode = node._previous
           let nextNode = node._next
           prevNode.nodeNext = nextNode
-          if(node === this.tail._next)this.tail._next.nodeNext = prevNode
+          if(node === this.tail._next) this.tail.nodeNext = prevNode
           else nextNode.nodePrevious = prevNode
         }
         this.count--
