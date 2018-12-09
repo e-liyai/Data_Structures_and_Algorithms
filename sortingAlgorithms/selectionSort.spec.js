@@ -1,4 +1,4 @@
-import insertionSort from './insertionSort'
+import selectionSort from './selectionSort'
 
 let list
 describe('test insertionSort sort', () => {
@@ -7,7 +7,7 @@ describe('test insertionSort sort', () => {
   })
 
   test('test insertionSort sort', () => {
-    insertionSort(list)
+    selectionSort(list)
     expect(list[0]).toBe(1)
     expect(list[4]).toBe(4)
     expect(list[list.length-1]).toBe(9)
