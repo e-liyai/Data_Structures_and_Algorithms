@@ -8,7 +8,8 @@ describe('test bubble sort', () => {
 
   test('test bubble sort', () => {
     bubbleSort(list)
-    console.log('~~~~', list)
-    expect(list).toBeTruthy()
+    expect(list[0]).toBe(1)
+    expect(list[4]).toBe(4)
+    expect(list[list.length-1]).toBe(9)
   })
 })
