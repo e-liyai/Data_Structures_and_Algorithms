@@ -11,7 +11,6 @@ const bubbleSort = list => {
     }
     if(!swapped) break
   }
-  return list
 }
 
 module.exports = bubbleSort
