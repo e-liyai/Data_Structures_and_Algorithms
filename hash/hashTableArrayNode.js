@@ -2,9 +2,11 @@ import HashNode from '../node/hashTableNodePair'
 import DoublyLinkedList from '../linkedList/doublyLinkedList'
 
 export default class {
-  constructor() {
+  constructor(key, value=null) {
     this._list = new DoublyLinkedList(null)
+    if (key !== null) this.add(key, value)
   }
+
 
   add(key, value) {
     const hashNode = new HashNode(key, value)

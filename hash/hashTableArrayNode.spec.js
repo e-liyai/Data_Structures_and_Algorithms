@@ -26,4 +26,9 @@ describe('test HashTableArrayNode data structure', () => {
     expect(() => hashTableNode.update(4, 'four')).toThrowError('The collection does not contain the key')
     expect(() => hashTableNode.remove(4)).toThrowError('The collection does not contain the key')
   })
+
+  test('test hash array node instantiation', () => {
+    let hashTableNode1 = new HashTableArrayNode(4, 'four')
+    expect(hashTableNode1.tryGetValue(4)).toEqual('four')
+  })
 })
