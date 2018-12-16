@@ -12,7 +12,7 @@ describe('test stack list data structure', () => {
     expect(minHeap.size()).toBe(1)
   })
 
-  test('add items to min heap', () => {
+  test('test add items to min heap', () => {
     minHeap.add(6)
     minHeap.add(3)
     minHeap.add(9)
@@ -20,7 +20,7 @@ describe('test stack list data structure', () => {
     expect(minHeap.peek()).toBe(3)
   })
 
-  test('remove item from heap', () => {
+  test('test remove item from heap', () => {
     minHeap.add(23)
     minHeap.add(64)
     minHeap.add(51)
@@ -35,5 +35,13 @@ describe('test stack list data structure', () => {
     expect(minHeap.peek()).toBe(9)
     minHeap.poll()
     expect(minHeap.peek()).toBe(11)
+  })
+
+  test('test right left child and right child', () => {
+    minHeap.add(6)
+    minHeap.add(3)
+    minHeap.add(9)
+    expect(minHeap.rightChild(0)).toBe(9)
+    expect(minHeap.leftChild(0)).toBe(6)
   })
 })
