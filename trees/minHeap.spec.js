@@ -33,5 +33,7 @@ describe('test stack list data structure', () => {
     expect(minHeap.peek()).toBe(7)
     minHeap.poll()
     expect(minHeap.peek()).toBe(9)
+    minHeap.poll()
+    expect(minHeap.peek()).toBe(11)
   })
 })
