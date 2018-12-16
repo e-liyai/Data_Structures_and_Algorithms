@@ -3,7 +3,7 @@ export default class {
       this.heap = []
     }
 
-    getParentIndex(childIndex) {return (childIndex - 1)/2}
+    getParentIndex(childIndex) {return parseInt((childIndex - 1)/2)}
     getRightChildIndex(parentIndex) {return (2 * parentIndex)+2}
     getLeftChildIndex(parentIndex) {return (2 * parentIndex)+1}
 
@@ -30,6 +30,7 @@ export default class {
       if(!this.heap.length) throw new Error('List is empty')
       let item = this.heap[0]
       this.heap[0] = this.heap[this.heap.length - 1]
+      this.heap.splice(-1,1)
       this.heapifyDown()
       return item
     }
@@ -43,7 +44,7 @@ export default class {
       let index = 0
       while(this.hasLeftChild(index)) {
         let smallerChildIndex = this.getLeftChildIndex(index)
-        if (this.hasRightChild(index) && this.rightChild(index) > this.leftChild(index)) {
+        if (this.hasRightChild(index) && this.rightChild(index) < this.leftChild(index)) {
           smallerChildIndex = this.getRightChildIndex(index)
         }
 
