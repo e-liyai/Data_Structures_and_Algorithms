@@ -7,13 +7,13 @@ export default class {
     getRightChildIndex(parentIndex) {return (2 * parentIndex)+2}
     getLeftChildIndex(parentIndex) {return (2 * parentIndex)+1}
 
-    hasLeftChild(index) { return getLeftChildIndex(index) < this.heap.length}
-    hasRightChild(index) { return getRightChildIndex(index) < this.heap.length}
-    hasParent(index) { return getParentIndex(index) >= 0}
+    hasLeftChild(index) { return this.getLeftChildIndex(index) < this.heap.length}
+    hasRightChild(index) { return this.getRightChildIndex(index) < this.heap.length}
+    hasParent(index) { return this.getParentIndex(index) >= 0}
 
-    leftChild(index) { return this.heap[getLeftChildIndex(index)]}
-    rightChild(index) { return this.heap[getRightChildIndex(index)]}
-    parent(index) { return this.heap[getParentIndex(index)]}
+    leftChild(index) { return this.heap[this.getLeftChildIndex(index)]}
+    rightChild(index) { return this.heap[this.getRightChildIndex(index)]}
+    parent(index) { return this.heap[this.getParentIndex(index)]}
 
     swap(indexOne, indexTwo) {
       const temp = this.heap[indexOne]
@@ -30,34 +30,38 @@ export default class {
       if(!this.heap.length) throw new Error('List is empty')
       let item = this.heap[0]
       this.heap[0] = this.heap[this.heap.length - 1]
-      heapifyDown()
+      this.heapifyDown()
       return item
     }
 
     add(item) {
-      this.heap.append(item)
-      heapifyUp()
+      this.heap.push(item)
+      this.heapifyUp()
     }
 
     heapifyDown() {
       let index = 0
-      while(hasLeftChild(index)) {
-        let smallerChildIndex = getLeftChildIndex(index)
-        if (hasRightChild(index) && rightChild(index) > leftChild(index)) {
-          smallerChildIndex = getRightChildIndex(index)
+      while(this.hasLeftChild(index)) {
+        let smallerChildIndex = this.getLeftChildIndex(index)
+        if (this.hasRightChild(index) && this.rightChild(index) > this.leftChild(index)) {
+          smallerChildIndex = this.getRightChildIndex(index)
         }
 
         if (this.heap[index] < this.heap[smallerChildIndex]) break
-        else swap(index, smallerChildIndex)
+        else this.swap(index, smallerChildIndex)
         index = smallerChildIndex
       }
     }
 
     heapifyUp() {
       let index = this.heap.length - 1
-      while(hasParent(index) && parent(index) > this.heap[index]) {
-        swap(getParentIndex(index), index)
-        index = getParentIndex(index)
+      while(this.hasParent(index) && this.parent(index) > this.heap[index]) {
+        this.swap(this.getParentIndex(index), index)
+        index = this.getParentIndex(index)
       }
+    }
+
+    size(){
+      return this.heap.length
     }
 }
