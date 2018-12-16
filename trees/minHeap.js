@@ -38,4 +38,14 @@ export default class {
       this.heap.append(item)
       heapifyUp()
     }
+
+    heapifyDown() {}
+
+    heapifyUp() {
+      let index = this.heap.length - 1
+      while(hasParent(index) && parent(index) > this.heap[index]) {
+        swap(getParentIndex(index), index)
+        index = getParentIndex(index)
+      }
+    }
 }
