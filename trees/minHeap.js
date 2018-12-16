@@ -21,5 +21,21 @@ export default class {
       this.heap[indexTwo] = temp
     }
 
+    peek() {
+      if(!this.heap.length) throw new Error('List is empty')
+      return this.heap[0]
+    }
 
+    poll() {
+      if(!this.heap.length) throw new Error('List is empty')
+      let item = this.heap[0]
+      this.heap[0] = this.heap[this.heap.length - 1]
+      heapifyDown()
+      return item
+    }
+
+    add(item) {
+      this.heap.append(item)
+      heapifyUp()
+    }
 }
