@@ -1,4 +1,4 @@
-#Algorithms and Data Structures
+# Algorithms and Data Structures
 
 This repository implements popular Data Structures and Algorithms in JavaScript
 
