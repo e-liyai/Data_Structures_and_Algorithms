@@ -39,7 +39,19 @@ export default class {
       heapifyUp()
     }
 
-    heapifyDown() {}
+    heapifyDown() {
+      let index = 0
+      while(hasLeftChild(index)) {
+        let smallerChildIndex = getLeftChildIndex(index)
+        if (hasRightChild(index) && rightChild(index) > leftChild(index)) {
+          smallerChildIndex = getRightChildIndex(index)
+        }
+
+        if (this.heap[index] < this.heap[smallerChildIndex]) break
+        else swap(index, smallerChildIndex)
+        index = smallerChildIndex
+      }
+    }
 
     heapifyUp() {
       let index = this.heap.length - 1
