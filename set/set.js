@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export default class {
   constructor() {
     this._items = []
@@ -16,10 +18,17 @@ export default class {
     }
   }
 
-
+  remove(item) {
+    const removed = _.remove(this._items, value => value === item)
+    return !!removed;
+  }
 
   contains(item){
     this._items.forEach(value => { if(item === value) return true })
     return false
+  }
+
+  count() {
+    return this._items.length
   }
 }
