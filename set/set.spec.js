@@ -21,4 +21,8 @@ describe('test set collection', () => {
     set.addRange([2, 5, 1, 8])
     expect(() => set.add(2)).toThrowError('Item already exists')
   })
+  test('test add array with existing value', () => {
+    set.addRange([2, 5, 1, 8])
+    expect(() => set.addRange([4, 5, 9])).toThrowError('An item in the list already exists')
+  })
 })
