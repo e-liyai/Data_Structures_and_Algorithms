@@ -25,4 +25,10 @@ describe('test set collection', () => {
     set.addRange([2, 5, 1, 8])
     expect(() => set.addRange([4, 5, 9])).toThrowError('An item in the list already exists')
   })
+  test('test remove', () => {
+    set.addRange([2, 5, 1, 8])
+    const removed = set.remove(8)
+    expect(removed).toBeTruthy()
+    expect(set.count()).toBe(3)
+  })
 })
