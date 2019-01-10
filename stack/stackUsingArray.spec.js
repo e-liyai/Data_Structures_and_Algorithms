@@ -10,7 +10,7 @@ describe('test stack list data structure', () => {
     expect(stack.count()).toBe(0)
   })
 
-    test('test push item to stack', () => {
+  test('test push item to stack', () => {
     stack.push(5)
     expect(stack.count()).toBe(1)
     stack.push(34)

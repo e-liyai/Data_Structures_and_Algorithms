@@ -24,8 +24,7 @@ export default class {
   }
 
   contains(item){
-    this._items.forEach(value => { if(item === value) return true })
-    return false
+    return _.includes(this._items, item);
   }
 
   count() {
