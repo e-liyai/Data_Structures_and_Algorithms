@@ -1,18 +1,24 @@
 import BadMatchTable from './badMatchTable'
 
 const search = (pattern, toSearch) => {
-	const badMatchTable = BadMatchTable(pattern)
+	const badMatchTable = new BadMatchTable(pattern)
 	let currentStartIndex = 0
-	let charactersLeftToMatch = pattern.length - 1 
 
-	while(charactersLeftToMatch >= 0 &&
-		pattern[charactersLeftToMatch] === toSearch[currentStartIndex + charactersLeftToMatch]) charactersLeftToMatch--
+	while(currentStartIndex <= toSearch.length - pattern.length) {
+		let charactersLeftToMatch = pattern.length - 1 
 
-	if (charactersLeftToMatch < 0) {
-		currentStartIndex += pattern.length
-		return true
+		while(charactersLeftToMatch >= 0 &&
+			pattern[charactersLeftToMatch] === toSearch[currentStartIndex + charactersLeftToMatch]) charactersLeftToMatch--
+
+		if (charactersLeftToMatch < 0) {
+			currentStartIndex += pattern.length
+			return true
+		}
+
+		currentStartIndex += badMatchTable.getProperty(toSearch[currentStartIndex + pattern.length -1])
 	}
-
-	currentStartIndex += badMatchTable._distances[toSearch[currentStartIndex + pattern.length -1]]
+	return false
 
 }
+
+module.exports = search
