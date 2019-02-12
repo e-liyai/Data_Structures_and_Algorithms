@@ -12,8 +12,8 @@ describe('test bad match table', () => {
   })
 
   test('test table generated', () => {
-  	expect(badMatchTable._distances['T']).toBe(1)
-  	expect(badMatchTable._distances['R']).toBe(3)
-  	expect(badMatchTable._distances['U']).toBe(2)
+  	expect(badMatchTable.getProperty('T')).toBe(1)
+  	expect(badMatchTable.getProperty('R')).toBe(3)
+  	expect(badMatchTable.getProperty('U')).toBe(2)
   })
 })
