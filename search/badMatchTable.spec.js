@@ -15,4 +15,8 @@ describe('test bad match table', () => {
 	expect(badMatchTable.getProperty('R')).toBe(3)
 	expect(badMatchTable.getProperty('U')).toBe(2)
   })
+
+  test('test mismatch item in table', () => {
+  	expect(badMatchTable.getProperty('X')).toBe(5)
+  })
 })
