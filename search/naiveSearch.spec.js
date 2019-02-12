@@ -1,4 +1,4 @@
-import search from './naïveSearch'
+import search from './naiveSearch'
 
 describe('test naive search', () => {
 	test('success test', () => {
