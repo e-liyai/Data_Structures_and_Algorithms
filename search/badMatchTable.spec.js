@@ -7,13 +7,12 @@ describe('test bad match table', () => {
   })
 
   test('test created table', () => {
-  	expect(badMatchTable._defaultValue).toBe(5)
   	expect(badMatchTable._pattern).toBe('TRUTH')
   })
 
   test('test table generated', () => {
   	expect(badMatchTable.getProperty('T')).toBe(1)
-  	expect(badMatchTable.getProperty('R')).toBe(3)
-  	expect(badMatchTable.getProperty('U')).toBe(2)
+	expect(badMatchTable.getProperty('R')).toBe(3)
+	expect(badMatchTable.getProperty('U')).toBe(2)
   })
 })
