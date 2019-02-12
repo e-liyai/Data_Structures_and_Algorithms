@@ -2,7 +2,7 @@ import search from './boyerMooreHorspoolSearch'
 
 describe('test naive search', () => {
 	test('success test', () => {
-		expect(search('man', 'woman')).b
+		expect(search('man', 'woman')).boBeTruthy
 	})
 
 	test('fail check test', () => {
@@ -11,5 +11,10 @@ describe('test naive search', () => {
 
 	test('empty variable test', () => {
 		expect(search('', 'empty')).toBeFalsy
+	})
+
+	test('test large string', () => {
+		const searchString = 'WE HOLD THESE TRUTHS TO BE SELF-EVIDENT'
+		expect(search('TRUTHS', searchString)).boBeTruthy
 	})
 })
