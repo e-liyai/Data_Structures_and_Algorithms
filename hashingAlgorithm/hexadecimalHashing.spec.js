@@ -8,9 +8,9 @@ describe('test hexadecimal hashing algorithm', () => {
     expect(hash('father')).toEqual('-8ab1feb7b2231')
   })
   test('test incorrect hash', () => {
-    expect(hash(4293)).not.toEqual(20)
+    expect(hash('incorrect')).not.toEqual(20)
   })
-  test('test consistency', () => {
+  test('test deterministic', () => {
     const val1 = hash('458df')
     const val2 = hash('458df')
     expect(val1).toEqual(val2)
