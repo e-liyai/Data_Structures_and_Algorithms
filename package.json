@@ -12,7 +12,7 @@
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "jest": "^23.6.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.19"
   },
   "scripts": {
     "test": "jest"
